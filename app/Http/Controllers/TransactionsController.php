@@ -8,7 +8,7 @@ class TransactionsController extends Controller
 {
     public function index()
     {
-        $transactions = Transaction::all();
+        $transactions = Transaction::with('user')->get();
         return view('transactions.index', compact('transactions'));
     }
 }
