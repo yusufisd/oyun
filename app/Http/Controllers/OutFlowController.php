@@ -16,7 +16,7 @@ class OutFlowController extends Controller
                 'datetime' => 'required|date',
             ]);
             $transaction = Transaction::create([
-                'user_id' => Auth::user()->id ,
+                'user_id' => Auth::user()->id ?? 1,
                 'amount' => $request->amount,
                 'payment_method' => $request->payment_method,
                 'datetime' => $request->datetime,
